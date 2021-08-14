@@ -31,6 +31,8 @@ Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree' 
 " --- Buscador 
 Plug 'easymotion/vim-easymotion' 
+" --- mover entre ventanas de vim
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -44,5 +46,10 @@ let NERDTreeQuitOnOpen=1
 let mapleader=" "
 nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>wq :wq<CR>
+
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
