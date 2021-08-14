@@ -23,17 +23,26 @@ set spelllang=en,es "Usa el corrector inglés y español.
 syntax enable "habilita el resaltado de código.
 
 " --------------------------| plugins |------------------------------
-call plug#begin('~/.vim/plugged')
 
+call plug#begin('~/.vim/plugged')
+" --- Tema.
 Plug 'morhetz/gruvbox'
+" --- Navegador de ficheros
+Plug 'scrooloose/nerdtree' 
+" --- Buscador 
+Plug 'easymotion/vim-easymotion' 
 
 call plug#end()
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
+" Cierra Nerdtree al abrir un fichero.
+let NERDTreeQuitOnOpen=1
 
-
-
+" ----------------------------| key maps |------------------------------
+" Mapping leader en el espacio.
+let mapleader=" "
+nmap <Leader>s <Plug>(easymotion-s2)
+nmap <Leader>nt :NERDTreeFind<CR>
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-
