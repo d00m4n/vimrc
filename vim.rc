@@ -41,6 +41,9 @@ let g:gruvbox_contrast_dark = "hard"
 " Cierra Nerdtree al abrir un fichero.
 let NERDTreeQuitOnOpen=1
 
+" All the languages Kite supports
+let g:kite_supported_languages = ['*']
+
 " ----------------------------| key maps |------------------------------
 " Mapping leader en el espacio.
 let mapleader=" "
@@ -50,6 +53,6 @@ nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>wq :wq<CR>
 
-autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 

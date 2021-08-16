@@ -11,3 +11,5 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # Auto install plugins and themes.
 nvim +PlugInstall +qall
 
+# Install kite
+bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
