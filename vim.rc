@@ -16,6 +16,9 @@ set ignorecase "Ignora mayúsculas al hacer una búsqueda.
 set smartcase "No ignora mayúsculas si la palabra a buscar las contiene.
 set spelllang=en,es "Usa el corrector inglés y español.
 "set termguicolors "Activa t:qrue colors en la terminal.
+set foldmethod=indent
+"set foldlevel=1
+"set foldclose=all
 
 " ----------------------------| other |----------------------------------
 " 
@@ -33,6 +36,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'easymotion/vim-easymotion' 
 " --- mover entre ventanas de vim
 Plug 'christoomey/vim-tmux-navigator'
+" --- marcar linea como comentario
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -53,6 +58,8 @@ nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>wq :wq<CR>
 nmap <Leader>qq :q!<CR> "exit without save
+nmap <Leader>. :Commentary<CR>
+vmap <Leader>. :Commentary<CR>
 
 autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
